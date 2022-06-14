@@ -4,10 +4,10 @@ function rollTheString(s, roll) {
     // convert to Num
     const newS = s.split('').map((s) => s.charCodeAt(0))
 
-    // find roll times for each char
+    // add roll times to each number
     for (const timesToRoll of roll) {
-        for (let i = 0; i < newS.length; i++) {
-            newS[i] = i < timesToRoll ? newS[i] + 1 : newS[i]
+        for (let i = 0; i < timesToRoll; i++) {
+            newS[i] = newS[i] + 1
         }
     }
 
