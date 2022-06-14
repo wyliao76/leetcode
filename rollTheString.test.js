@@ -14,6 +14,27 @@ function rollTheString(s, roll) {
     // convert back to Char
     const results = newS.map((s) => convertNumToASCII(s)).join('')
     return results
+
+    // matrix
+    // [1 1 1 1]   [1]
+    // [1 0 0 0]   [1]
+    // [1 1 0 0] * [1] = [4 1 2 2]
+    // [1 1 0 0]   [1]
+
+    //          T
+    // [1 1 1 1]   [1 1 1 1]   [1]
+    // [1 0 0 0]   [1 0 1 1]   [1]
+    // [1 1 0 0] = [1 0 0 0] * [1] = [4 3 1 1]
+    // [1 1 0 0]   [1 0 0 0]   [1]
+
+    // [1 1 1] * [1] = [3]
+    //                 [1]
+    //                 [1]
+
+    //        T
+    // [1 1 1] = [1 0 0]    [1]
+    //           [1 0 0] *  [1] = [1 1 1]
+    //           [1 0 0]    [1]
 }
 
 const convertNumToASCII = (num) => num > 122 ? String.fromCharCode(num % 123 + 97) : String.fromCharCode(num % 123)
