@@ -19,14 +19,25 @@ const twoSum = (nums, target) => {
     // }
     // return []
 
-    // one pass
-    const dict = {}
+    // // one pass
+    // const dict = {}
+    // for (let i = 0; i < nums.length; i++) {
+    //     const remainder = target - nums[i]
+    //     if (dict[remainder] !== undefined) {
+    //         return [i, dict[remainder]]
+    //     }
+    //     dict[nums[i]] = i
+    // }
+    // return []
+
+    // why not just use array?
+    const remainders = []
     for (let i = 0; i < nums.length; i++) {
         const remainder = target - nums[i]
-        if (dict[remainder] !== undefined) {
-            return [i, dict[remainder]]
+        if (remainders.includes(nums[i])) {
+            return [nums.indexOf(remainder), i]
         }
-        dict[nums[i]] = i
+        remainders.push(remainder)
     }
     return []
 }
