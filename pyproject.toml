@@ -7,13 +7,3 @@ fix = true
 line-length = 120  # Match PEP 8 (default: 88)
 target-version = ['py311', 'py313']
 skip-string-normalization = true  # Don't change single/double quotes
-
-[tool.pytest.ini_options]
-addopts = "--cov"
-asyncio_default_fixture_loop_scope = "function"
-
-[tool.coverage.run]
-source = ["."]
-
-[tool.coverage.report]
-show_missing = true

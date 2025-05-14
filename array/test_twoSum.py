@@ -13,23 +13,20 @@ class Solution:
         return []
 
 
-@pytest.fixture(scope="function")
-def test1(self):
+def test1():
     nums = [2, 7, 11, 15]
     target = 9
     solution = Solution()
-    assert solution.twoSum(nums, target) == [0, 1]
+    assert sorted(solution.twoSum(nums, target)) == [0, 1]
 
-@pytest.fixture(scope="function")
-def test2(self):
+def test2():
     nums = [3, 2, 4]
     target = 6
     solution = Solution()
-    assert solution.twoSum(nums, target) == [1, 2]
+    assert sorted(solution.twoSum(nums, target)) == [1, 2]
 
-@pytest.fixture(scope="function")
-def test3(self):
+def test3():
     nums = [3, 3]
     target = 6
     solution = Solution()
-    assert solution.twoSum(nums, target) == [0, 1]
+    assert sorted(solution.twoSum(nums, target)) == [0, 1]
