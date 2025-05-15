@@ -2,3 +2,4 @@ node_modules
 /src/config/.env*
 a.out
 /venv/
+__pycache__
