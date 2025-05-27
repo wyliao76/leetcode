@@ -7,7 +7,9 @@
     "nums"
   ],
   "python.testing.pytestArgs": [
-    "."
+    ".",
+    "-v",
+    "-s"
   ],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true
