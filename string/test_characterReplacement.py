@@ -9,10 +9,7 @@ class Solution:
         max_len = 0
 
         for right in range(len(s)):
-            if(freq.get(s[right])):
-                freq[s[right]] += 1
-            else:
-                freq[s[right]] = 1
+            freq[s[right]] = freq.get(s[right], 0) + 1
 
             max_freq_char = max(max_freq_char, freq[s[right]])
             
