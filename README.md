@@ -7,6 +7,32 @@ or
 
 npm run test fileName
 
+### Python
+
+# Install
+pyenv install 3.12.0
+
+# Create virtual env
+python3 -m venv venv
+
+# Activate
+source venv/bin/activate
+
+# Install lib
+pip3 install -r requirements-dev.txt
+
+# Deactivate
+deactivate
+
+## set PYTHONPATH
+export PYTHONPATH="${PYTHONPATH}:/path/to/your/lambda/"
+
+## unittest
+python -m unittest tests/src/* -v
+
+# disable __pycache__
+export PYTHONDONTWRITEBYTECODE=1
+
 # leetcode
 
 https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions

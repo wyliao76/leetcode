@@ -2,7 +2,7 @@ module.exports = {
     'env': {
         'browser': true,
         'commonjs': true,
-        'es2021': true,
+        'es2024': true,
         'node': true,
     },
     'extends': ['eslint:recommended', 'google', 'plugin:jest/recommended', 'plugin:jest/style'],

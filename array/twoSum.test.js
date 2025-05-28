@@ -19,7 +19,7 @@ const twoSum = (nums, target) => {
     // }
     // return []
 
-    // one pass
+    // // one pass
     const dict = {}
     for (let i = 0; i < nums.length; i++) {
         const remainder = target - nums[i]
@@ -29,6 +29,17 @@ const twoSum = (nums, target) => {
         dict[nums[i]] = i
     }
     return []
+
+    // // why not just use array?
+    // const remainders = []
+    // for (let i = 0; i < nums.length; i++) {
+    //     const remainder = target - nums[i]
+    //     if (remainders.includes(nums[i])) {
+    //         return [nums.indexOf(remainder), i]
+    //     }
+    //     remainders.push(remainder)
+    // }
+    // return []
 }
 
 describe('playground', () => {
