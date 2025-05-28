@@ -39,14 +39,14 @@ struct ListNode *createLinkedLists(int *arr, int size)
 
 struct ListNode* reverseList(struct ListNode* head) {
     struct ListNode *prev = NULL;
+    struct ListNode *ptr = head;
     
-    while(head != NULL)
+    while(ptr)
     {
-        struct ListNode *temp = (struct ListNode*) malloc(sizeof(struct ListNode));
-        temp->val = head->val;
-        temp->next = prev;
-        prev = temp;
-        head = head->next;
+        struct ListNode *next = ptr->next;
+        ptr->next = prev;
+        prev = ptr;
+        ptr = next;
     }
     return prev;
 }
