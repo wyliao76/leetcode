@@ -3,19 +3,22 @@ from typing import List
 
 
 class Solution:
+    # # math solution
+    # def missingNumber(self, nums: List[int]) -> int:
+    #     size = len(nums)
+    #     expected = sum(i for i in range(size + 1))
+    #     actual = sum(nums)
+    #     return expected - actual
+
+    # # I like XOR since this is used in checksum
     def missingNumber(self, nums: List[int]) -> int:
         size = len(nums)
+        xor = 0
         for i in range(size):
-            while (nums[i] >= 0 and nums[i] < size and nums[i] != nums[nums[i]]):
-                tmp = nums[nums[i]]
-                nums[nums[i]] = nums[i]
-                nums[i] = tmp
-        
-        for i in range(size):
-            if (nums[i] != i):
-                return i
-        
-        return size
+            xor ^= i ^ nums[i]
+
+        xor ^= size
+        return xor
     
 def test1():
     solution = Solution()
