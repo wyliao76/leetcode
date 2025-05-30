@@ -3,8 +3,6 @@ from typing import List
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        nums = set(nums)
-        nums = list(nums)
         left = 0
         right = len(nums) - 1
 
@@ -12,6 +10,14 @@ class Solution:
             mid = (left + right) // 2
             if nums[mid] == target:
                 return True
+            
+            # corner case the left mid right are the same we need to skip
+            # we can discard this value because it's NOT the target
+            # so we shrink left right pointers
+            if nums[left] == nums[mid] == nums[right]:
+                left += 1
+                right -= 1
+                continue
 
             # check if left part is sorted
             if nums[left] <= nums[mid]:
