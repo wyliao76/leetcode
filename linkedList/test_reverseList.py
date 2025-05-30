@@ -22,7 +22,8 @@ class ListNodeBuilder:
 
             self.prev = current
 
-    def return_list(self, head):
+    @staticmethod
+    def return_list(head):
         current = head
         result = []
         while(current != None):
@@ -30,7 +31,6 @@ class ListNodeBuilder:
             current = current.next
 
         return result
-
 
 
 class Solution:
