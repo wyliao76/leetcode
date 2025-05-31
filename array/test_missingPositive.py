@@ -12,9 +12,10 @@ class Solution:
                 A[i] = tmp
         
         for i in range(size):
-            if (A[i] != i + 1):
+            if (i + 1) ^ A[i] != 0:
+            # if (A[i] != i + 1):
                 return i + 1
-        
+
         return size + 1
     
 def test1():
