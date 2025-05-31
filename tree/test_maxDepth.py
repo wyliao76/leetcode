@@ -38,11 +38,38 @@ class TreeBuilder:
         return root
 
 class Solution:
+    # def maxDepth(self, root: Optional[TreeNode]) -> int:
+    #     if not root:
+    #         return 0
+        
+    #     left = self.maxDepth(root.left)
+    #     right = self.maxDepth(root.right)
+
+    #     return max(left, right) + 1
+    
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
         
-        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+        queue = [root]
+
+        result = 0
+
+        while queue:
+            # I need to count left and right as same level
+            # otherwise it will be the sum of all level
+            for i in range(len(queue)): 
+                node = queue.pop(0)
+
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            
+            result += 1
+        
+        return result
+
     
     
 def test1():
