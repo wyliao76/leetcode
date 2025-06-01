@@ -22,7 +22,8 @@ class ListNodeBuilder:
 
             self.prev = current
 
-    def return_list(self, head):
+    @staticmethod
+    def return_list(head):
         current = head
         result = []
         while(current != None):
@@ -32,12 +33,11 @@ class ListNodeBuilder:
         return result
 
 
-
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         prev = None
         current = head
-        while(current != None):
+        while current:
             next_node = current.next
             current.next = prev
             prev = current
