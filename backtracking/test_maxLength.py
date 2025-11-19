@@ -3,21 +3,35 @@ from typing import List
 
 class Solution:
     def maxLength(self, arr: List[str]) -> int:
-        self.result = 0
-        def backtracking(index, string):
-            if len(set(string)) < len(string):
-                return
+        dp = [""]
+
+        for string in arr:
+            for i in dp:
+                combined = i + string
+                if len(set(combined)) == len(combined):
+                    dp.append(combined)
+
+        result = 0
+        for string in dp:
+            if len(string) > result:
+                result = len(string)
+        return result
+
+        # self.result = 0
+        # def backtracking(index, string):
+        #     if len(set(string)) < len(string):
+        #         return
             
-            # else update max
-            self.result = max(self.result, len(string))
+        #     # else update max
+        #     self.result = max(self.result, len(string))
 
-            # here we concat and move to next
-            for i in range(index, len(arr)):
-                backtracking(i + 1, string + arr[i])
+        #     # here we concat and move to next
+        #     for i in range(index, len(arr)):
+        #         backtracking(i + 1, string + arr[i])
 
-        backtracking(0, "")
+        # backtracking(0, "")
 
-        return self.result
+        # return self.result
 
 
 def test1():
@@ -35,3 +49,4 @@ def test3():
 def test4():
     solution = Solution()
     assert solution.maxLength(["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"]) == 16
+    
