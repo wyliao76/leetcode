@@ -1,3 +1,9 @@
+[project]
+name = "leetcode"
+version = "1.0.0"
+readme = "README.md"
+requires-python = ">=3.13"
+
 [tool.ruff]
 line-length = 120
 select = ["E", "F", "W", "I"]
@@ -7,3 +13,8 @@ fix = true
 line-length = 120  # Match PEP 8 (default: 88)
 target-version = ['py311', 'py313']
 skip-string-normalization = true  # Don't change single/double quotes
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]

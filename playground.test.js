@@ -43,3 +43,33 @@ describe('playground', () => {
         ])
     })
 })
+
+describe('fib', () => {
+    const fib = (n) => {
+        const result = [1, 1]
+        if (n === 1) {
+            return [1]
+        }
+        if (n === 2) {
+            return result
+        }
+        for (let i = 2; i < n; ++i) {
+            result[i] = result[i - 2] + result[i - 1]
+        }
+        return result
+    }
+
+    it('should do fib (n)', () => {
+        expect(fib(6)).toStrictEqual([
+            1, 1, 2, 3, 5, 8,
+        ])
+
+        expect(fib(1)).toStrictEqual([
+            1,
+        ])
+
+        expect(fib(2)).toStrictEqual([
+            1, 1,
+        ])
+    })
+})
